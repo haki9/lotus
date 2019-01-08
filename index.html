@@ -15,16 +15,25 @@
   <script src="https://cdn.ringer.biz/js/forge.min.js"></script>
   <script src="https://cdn.ringer.biz/js/ringer.js"></script>
   <script type = "text/JavaScript">
-         function auto_create_channel() {
+    function request_user_login(username, password) {
+            Ringer.post({
+                api_name: "user-login",
+                username: username,
+                password: password
+            }, function(response) {
+                WebViewJS.onRequestUserLogin(JSON.stringify(respon));
+            });
+    };
+         function request_create_channel() {
             Ringer.post({
                 api_name: "channel-create",
                 group:   "test.com",
                 group_type: "domain",
                 channel: "Ahihihi123"
             }, function(respon) {
-                WebViewJS.createChannel(JSON.stringify(respon));
+                WebViewJS.onRequestCreateChannel(JSON.stringify(respon));
             });
-        }
+        };
       </script>
 </body>
 </html>
