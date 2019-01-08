@@ -21,7 +21,7 @@
                 username: username,
                 password: password
             }, function(response) {
-                WebViewJS.onRequestUserLogin(JSON.stringify(respon));
+                WebViewJS.onRequestUserLogin(JSON.stringify(response));
             });
     };
          function request_create_channel() {
@@ -30,8 +30,8 @@
                 group:   "test.com",
                 group_type: "domain",
                 channel: "Ahihihi123"
-            }, function(respon) {
-                WebViewJS.onRequestCreateChannel(JSON.stringify(respon));
+            }, function(response) {
+                WebViewJS.onRequestCreateChannel(JSON.stringify(response));
             });
         };
       </script>
