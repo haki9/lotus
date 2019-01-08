@@ -15,11 +15,16 @@
   <script src="https://cdn.ringer.biz/js/forge.min.js"></script>
   <script src="https://cdn.ringer.biz/js/ringer.js"></script>
   <script type = "text/JavaScript">
-         function Hello() {
-           console.log("hello from java");
-           alert("hello alert");
-            return "hello";
-         }
+         function auto_create_channel() {
+            Ringer.post({
+                api_name: "channel-create",
+                group:   "test.com",
+                group_type: "domain",
+                channel: "Ahihihi123"
+            }, function(respon) {
+                WebViewJS.createChannel(JSON.stringify(respon));
+            });
+        }
       </script>
 </body>
 </html>
